@@ -46,7 +46,7 @@ python tools/export_model.py -c configs/yolov3/yolov3_darknet53_270e_coco.yml --
 
 上面的脚本需要下载模型，Yolov3-Darknet53也是官方文档中支持的successful-pipeline之一（飞腾平台）。但我测试了下面说的v3_r50的模型，也是成功的。是否支持应该看算子而不是算法。
 
-![Untitled](K100%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8BDe%205dd15/Untitled.png)
+![Untitled](imgs/model_supported.png)
 
 或者下载这个模型，yolov3_r50，官方提供的：
 
@@ -59,7 +59,7 @@ tar xzf yolov3_r50vd_dcn_270e_coco.tgz
 
 这里主要参考了Paddle-Inference-Demo和文档中昆仑推理的部分，需要注意Paddle推理检测模型是三个输入的，具体可以用Netron查看，我放一个Yolov3-darnet53的输入输出：
 
-![Untitled](K100%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8BDe%205dd15/Untitled%201.png)
+![Untitled](imgs/model_inputs_outputs.png)
 
 脚本见infer-yolov3.py和utils.py
 
@@ -195,7 +195,7 @@ time is: 852.9250192642212 ms
 
 阈值0.7
 
-![res.jpg](K100%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8BDe%205dd15/res.jpg)
+![res.jpg](imgs/res.jpg)
 
 可以通过xpu_msi命令查看XPU的使用情况，确认模型推理使用到了加速卡。
 
